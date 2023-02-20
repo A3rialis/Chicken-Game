@@ -28,9 +28,8 @@ public class PlayerController : MonoBehaviour
 
         transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
 
-        if(Input.GetMouseButtonDown(0)){
+        if(Input.GetMouseButton(0)){
             weapon.SendMessage("Fire");
-            rb.AddForce(transform.forward*-1.0f, ForceMode.VelocityChange);
         }
     }
 

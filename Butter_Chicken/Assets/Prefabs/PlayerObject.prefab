@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1653461944}
   - component: {fileID: 1653461943}
   - component: {fileID: 5889049987373525060}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653461941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00289, y: -0.0003, z: 0.00264}
+  m_LocalPosition: {x: 0.00254, y: 0.00072, z: 0.00233}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653461941}
-  m_Mesh: {fileID: -6789219620549785865, guid: a3cf0637b6e38fb4e96ddd11c629b50b, type: 3}
+  m_Mesh: {fileID: 6430157885437550921, guid: a1ab8eebf931ab242bcc81acc8a687ee, type: 3}
 --- !u!23 &1653461943
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fd3a927eb6ddb2a4492dc1587f8d865c, type: 2}
+  - {fileID: -876546973899608171, guid: a1ab8eebf931ab242bcc81acc8a687ee, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,9 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49a9bd697694344489d9a2d8469b0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 526467735413426749}
   bulletPrefab: {fileID: 932402572038942464, guid: 03ef6f3fc27ec7b4f977a18397bd3047, type: 3}
   gunPoint: {fileID: 1231297372822700225}
   bulletSpeed: 10
+  reloadTime: 0.5
 --- !u!1 &526467735413426749
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +114,7 @@ GameObject:
   - component: {fileID: 526467735413426738}
   - component: {fileID: 526467735413426739}
   - component: {fileID: 526467735413426736}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +184,7 @@ MonoBehaviour:
   aimMask:
     serializedVersion: 2
     m_Bits: 8
-  movementSpeed: 4
+  movementSpeed: 1.6
 --- !u!1 &526467736286397989
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +196,7 @@ GameObject:
   - component: {fileID: 526467736286397988}
   - component: {fileID: 526467736286397990}
   - component: {fileID: 526467736286397991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chicken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +228,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526467736286397989}
-  m_Mesh: {fileID: 1248039166958328286, guid: a3cf0637b6e38fb4e96ddd11c629b50b, type: 3}
+  m_Mesh: {fileID: 1248039166958328286, guid: a1ab8eebf931ab242bcc81acc8a687ee, type: 3}
 --- !u!23 &526467736286397991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -247,7 +249,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: a3cf0637b6e38fb4e96ddd11c629b50b, type: 3}
+  - {fileID: -876546973899608171, guid: a1ab8eebf931ab242bcc81acc8a687ee, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -278,7 +280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1231297372822700225}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gunpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671413109370329009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0039, z: -0.00093}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -311,7 +313,7 @@ GameObject:
   - component: {fileID: 1477955182138248585}
   - component: {fileID: 6701663710347567111}
   - component: {fileID: 4172486661403083827}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Goggles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +342,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7984108749754890027}
-  m_Mesh: {fileID: -1330274836942720624, guid: a3cf0637b6e38fb4e96ddd11c629b50b, type: 3}
+  m_Mesh: {fileID: -1330274836942720624, guid: a1ab8eebf931ab242bcc81acc8a687ee, type: 3}
 --- !u!23 &4172486661403083827
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -361,7 +363,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a9841b45589981498fabac3cf56d290, type: 2}
+  - {fileID: -876546973899608171, guid: a1ab8eebf931ab242bcc81acc8a687ee, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -394,7 +396,7 @@ GameObject:
   - component: {fileID: 1673979404409742758}
   - component: {fileID: 6641537497031612685}
   - component: {fileID: 517891213070137990}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Backpack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +425,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8346234019465684708}
-  m_Mesh: {fileID: -5003366202268185646, guid: a3cf0637b6e38fb4e96ddd11c629b50b, type: 3}
+  m_Mesh: {fileID: -5003366202268185646, guid: a1ab8eebf931ab242bcc81acc8a687ee, type: 3}
 --- !u!23 &517891213070137990
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -444,7 +446,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fd3a927eb6ddb2a4492dc1587f8d865c, type: 2}
+  - {fileID: -876546973899608171, guid: a1ab8eebf931ab242bcc81acc8a687ee, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

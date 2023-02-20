@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour
@@ -13,11 +11,15 @@ public class BulletScript : MonoBehaviour
     [SerializeField] private float knockback;
     [SerializeField] private float damage;
     private void Awake(){
-        transform.localScale = new Vector3(size, size, size);  // for when bullet upgrades get implemented
+        size = GlobalStats._instance.bulletSize;
+        explosionRadius = GlobalStats._instance.bulletExplosiveRadius;
+        knockback = GlobalStats._instance.bulletKnockback;
+        damage = GlobalStats._instance.bulletDamage;
+        transform.localScale = new Vector3(size, size, size); 
+        Destroy(gameObject, 10f);
     }
 
-    private void OnTriggerEnter(Collider other) {
-
+    private void OnCollisionEnter(Collision other) {
     
     GameObject hit = other.gameObject;
     Rigidbody enemyRB;
@@ -37,9 +39,9 @@ public class BulletScript : MonoBehaviour
     Collider[] affectedObjects = Physics.OverlapSphere(transform.position, explosionRadius);
 
         foreach(Collider collider in affectedObjects){
-            hit = collider.gameObject;
+            GameObject affected = collider.gameObject;
 
-            if(hit.CompareTag("Enemy") && other != collider){
+            if(affected.CompareTag("Enemy") && hit != affected){
              
                 enemyRB = collider.GetComponent<Rigidbody>();
                 
@@ -50,14 +52,14 @@ public class BulletScript : MonoBehaviour
                     float distance;
 
                     // damage and knockback fall off with distance
-                    distance = Vector3.Distance(transform.position,hit.transform.position);
-                    powerFalloff = Mathf.Pow(((explosionRadius - distance) / explosionRadius), 2);
+                    distance = Vector3.Distance(transform.position,affected.transform.position);
+                    powerFalloff = (explosionRadius - distance) / explosionRadius;
 
                     // Take Damage
                     hit.GetComponent<EnemyScript>().TakeDamage(powerFalloff * damage);
                     
                     // Knockback
-                    direction = hit.transform.position - transform.position;
+                    direction = affected.transform.position - transform.position;
                     Debug.Log(direction);
                     enemyRB.AddForce(direction.normalized * powerFalloff * knockback, ForceMode.Impulse);
                 }
