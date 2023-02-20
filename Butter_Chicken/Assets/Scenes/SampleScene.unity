@@ -351,7 +351,7 @@ MonoBehaviour:
   bulletSize: 0.2
   bulletExplosiveRadius: 0
   bulletKnockback: 3
-  gunRateOfFire: 2
+  gunRateOfFire: 0.5
   gunBulletSpeed: 2
   playerSpeed: 1
   enemyHP: 10

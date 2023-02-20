@@ -23,6 +23,14 @@ public class GlobalStats : MonoBehaviour
     // Player stats
     private int playerXP;
     public int playerLevelRequirement;
+    private void Start() {
+        if (_instance != null && _instance != this) { 
+            Destroy(this); 
+        } 
+        else { 
+            _instance = this; 
+        } 
+    }
     private void Awake() 
     { 
         if (_instance != null && _instance != this) { 

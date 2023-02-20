@@ -359,6 +359,7 @@
 "Assets/Scripts/BulletScript.cs"
 "Assets/Scripts/EnemyScript.cs"
 "Assets/Scripts/GlobalStats.cs"
+"Assets/Scripts/LevelUpScript.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/WeaponScript.cs"
 -langversion:9.0
